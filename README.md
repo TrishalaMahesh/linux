@@ -1,5 +1,26 @@
-## Steps for Assignment 1
-1. Create a Ubuntu 20.04 VM on VMware Workstation with atleast 200GB Disk space,8 GB Memory and  8 processor cores.
+# CMPE-283(Spring'22) Assignments:
+## Team Members
+- Trishala M (SJSU ID:015219646)
+- Suhas Anand Balagar (SJSU ID:015243540)
+## Assignment 1: To Discover VMX features
+  ### Trishala Contributions:
+  1. Installed VMware Workstation and created a Ubuntu 20.04 VM with
+  2. placeholder
+  3. placeholder
+  4. placeholder
+  5. placeholder
+  6. placeholder
+  7. placeholder
+  ###  Suhas Contributions:
+  1. placeholder
+  2. placeholder
+  3. placeholder
+  4. placeholder
+  5. placeholder
+  6. placeholder
+  7. placeholder
+## Assignment 1 Steps:
+1. Create a Ubuntu 20.04 VM on VMware Workstation with 200GB Disk space,8 GB Memory and  8 processor cores.
 2. Install git and other neccessary required packages using the below command.
 
 
