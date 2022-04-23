@@ -3,26 +3,28 @@
 - Trishala M (SJSU ID:015219646)
 - Suhas Anand Balagar (SJSU ID:015243540)
 ## Assignment 1: To Discover VMX features
-  ### Collaborative efforts:
-  1.Installed VMware Workstation and created a Ubuntu 20.04 VM with
-  2.
+### Collaborative efforts:
+
+1. Installed VMware Workstation and created a Ubuntu 20.04 VM 
+2. Installed all the neccesary packages required for building linux kernel
+3. Cloned torvalds original linux github repo into VM
+4. Built latest version of Linux module using various make commands and verified it's installation after rebooting
+5. Created 283-1 folder and adder required files to generate Kernel Object file and verfied VMX features
+6. Added functionality to determine if secondary procbased controls are available and check the ability to set “Activate Secondary 
+Controls” control in the primary procbased controls.
+
+  
   
   ### Trishala Contributions:
-  1. Installed VMware Workstation and created a Ubuntu 20.04 VM with
-  2. placeholder
-  3. placeholder
-  4. placeholder
-  5. placeholder
-  6. placeholder
-  7. placeholder
+  Added code in CMPE283-1.C to support reading following MSRs to detect VMX features
+  - Primary procbased controls
+  - Secondary procbased controls
+ 
   ###  Suhas Contributions:
-  1. placeholder
-  2. placeholder
-  3. placeholder
-  4. placeholder
-  5. placeholder
-  6. placeholder
-  7. placeholder
+  Added code in CMPE283-1.C to support reading following MSRs to detect VMX features
+  - Entry based procbased controls
+  - Exit based procbased controls
+ 
 ## Assignment 1 Steps:
 1. Create a Ubuntu 20.04 VM on VMware Workstation with 200GB Disk space,8 GB Memory and  8 processor cores.
 2. Install git and other neccessary required packages using the below command.
