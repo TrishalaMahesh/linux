@@ -157,6 +157,29 @@ lsmod | grep cmpe283
 ```
 
 13. Run ```dmesg``` command to display VMX Features
+14. Below are the screenshots of the output:
+
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output1.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output2.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output3.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output4.png)
+
+## Assignment 2 :Instrumentation via hypercall
+### Collaborative efforts:
+
+1. After making changes to the vmx.c and cpuid.c files, we followed the steps as mentioned below to compile and make the modules. 
+2. Built and loaded the kerenl again for outer VM.
+3. We created an Inner VM with Ubuntuu 20.04 image.
+4. We captured the output for the individual cpuid leaf nodes inside the inner VM.
+5. We created this Readme.MD file.
+  
+  
+  ### Trishala Contributions:
+  - Added feature to determine the total number of exits for CPUID - 0X4FFFFFFF
+ 
+  ###  Suhas Contributions
+  - Added feature to detect the time spent inside the VM for processing all exits for CPUID - 0X4FFFFFFE
+
 ## Assignment 2 and 3 steps:
 
 1. Pre-requisite: Working model of assignment 1.
@@ -198,7 +221,8 @@ sudo apt-get install -y cpuid"
     cpuid -l 0x4ffffffd -s {exit_type}
     
  ```    
- The output screenshots are as below:
+ The output screenshot is as below:
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/Screenshot%20from%202022-04-21%2023-34-42.png)
  
  pushed the files into the repo
  
