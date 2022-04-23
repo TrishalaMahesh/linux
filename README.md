@@ -29,7 +29,7 @@ cd linux
   ```
   df -h 
   ```
--Display amount of free and used memory in the system
+- Display amount of free and used memory in the system
 
   ```
   free
@@ -66,8 +66,29 @@ cp /boot/config-$(uname -r) .config
 
 - Create the following certificate files manually
   - x509.genkey file under /linux/certs
+  ```
+   [ req ]
+  default_bits = 4096
+  distinguished_name = req_distinguished_name
+  prompt = no
+  string_mask = utf8only
+  x509_extensions = myexts
+
+  [ req_distinguished_name ]
+  O = cmpe283
+  CN = cmpe283 signing key
+  emailAddress = XXXobscuredXXX
+
+  [ myexts ]
+  basicConstraints=critical,CA:FALSE
+  keyUsage=digitalSignature
+  subjectKeyIdentifier=hash
+  authorityKeyIdentifier=keyid
+  ```
+  
   - canonical-certs.pem file under /linux/debian
   - canonical-revoked-certs.pem file under /linux/debian
+  - [Reference for debian certs](https://salsa.debian.org/kernel-team/linux/-/blob/master/debian/certs/debian-uefi-certs.pem)
 
 - Run below make commands to build linux kernel
 ```
@@ -80,7 +101,33 @@ sudo make INSTALL_MOD_STRIP=1 modules_install
 sudo make install
 sudo reboot
 ```
-8. Once the reboot is successful, you can check if you are using newly compiled kernel by doing below command in terminal. The Kernel
+8. Once the reboot is successful, you can check if kernel version has been updated to the latest version from the cloned source repo along with timestamp
 ```
 uname -a
 ```
+9. Create a directory under linux folder called 'CMPE283-1' and add following files in it.
+  - Makefile with contents fetched from canvas
+  - cmpe283-1.c and add code that checks for VMX Controls
+  
+10.Run ```make ``` command inside 'linux/CMPE283-1' path to generate Kernel Object file for cmpe283-1.c
+- Add the below line if you face any license related errors
+```
+MODULE_LICENSE("GPL v2");
+```
+
+11. Verify Kernel Object is created using command
+```
+ls |grep *.ko
+```
+
+12. Insert  cmpe283-1.ko into kernel by running INSMOD command
+```
+sudo insmod cmpe283-1.ko
+```
+- Verify If module is inserted by running below command. Output should be cmpe283_1
+```
+lsmod | grep cmpe283
+```
+
+13. Run ```dmesg``` command to display VMX Features
+
