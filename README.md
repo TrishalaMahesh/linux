@@ -3,6 +3,10 @@
 - Trishala M (SJSU ID:015219646)
 - Suhas Anand Balagar (SJSU ID:015243540)
 ## Assignment 1: To Discover VMX features
+  ### Collaborative efforts:
+  1.Installed VMware Workstation and created a Ubuntu 20.04 VM with
+  2.
+  
   ### Trishala Contributions:
   1. Installed VMware Workstation and created a Ubuntu 20.04 VM with
   2. placeholder
