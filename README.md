@@ -151,4 +151,62 @@ lsmod | grep cmpe283
 ```
 
 13. Run ```dmesg``` command to display VMX Features
+## Assignment 2 and 3 steps:
+
+1. Pre-requisite: Working model of assignment 1.
+2. Modify the cpuid.c & vmx.c files to support exits for CPUID leaf nodes (0x4fffffff, 0x4ffffffe,0x4ffffffc,0x4ffffffd)
+3. The following steps were perfomed as shown below to build the KVM Module and to install kernel:
+```
+sudo -j 8 modules
+sudo make INSTALL_MOD_STRIP=1 modules_install
+sudo make install
+sudo rmmod kvm_intel
+sudo rmmod kvm 
+lsmod|grep kvm 
+```
+4. Then inner VM (ubuntuu) was created inside existing VM by installing Virtual manager using below commands:
+```
+sudo apt update
+sudo apt install cpu-checker
+kvm-ok
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
+sudo systemctl is-active libvirtd
+sudo usermod -aG kvm $USER
+sudo usermod -aG libvirt $USER
+newgrp libvirt
+```
+5. Then started the virtual manager using the below command:
+```
+virt-manager
+```
+6. In the inner VM install following packages:
+```
+sudo apt-get update -y
+sudo apt-get install -y cpuid"
+```
+7. The following commands were run in nested VM to check for cpuid leaf nodes exits
+```
+    cpuid -l 0x4fffffff
+    cpuid -l 0x4ffffffe
+    cpuid -l 0x4ffffffc -s {exit_type}
+    cpuid -l 0x4ffffffd -s {exit_type}
+    
+ ```    
+ The output screenshots are as below:
+ 
+ pushed the files into the repo
+ 
+ Below are the list of the most frequent exits:
+ 1. Exit type 1 External Interruot
+ 2. Exit type 10 CPUID
+ 3. Exit type 30 I/O instruction
+ 4. Exit type 48 = EPT violation
+ 
+ Below are the lists of the least frequent exits:
+  1. Exit type 0- Exception or non-maskable interrupt
+  2. Exit type 7-Interrupt window
+  3. Exit type 28-Control-register access
+  4. Exit type 49-EPT misconfiguration
+    
+
 
