@@ -186,7 +186,7 @@ lsmod | grep cmpe283
 2. Modify the cpuid.c & vmx.c files to support exits for CPUID leaf nodes (0x4fffffff, 0x4ffffffe,0x4ffffffc,0x4ffffffd)
 3. The following steps were perfomed as shown below to build the KVM Module and to install kernel:
 ```
-sudo -j 8 modules
+sudo make -j 8
 sudo make INSTALL_MOD_STRIP=1 modules_install
 sudo make install
 sudo rmmod kvm_intel
