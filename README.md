@@ -159,10 +159,10 @@ lsmod | grep cmpe283
 13. Run ```dmesg``` command to display VMX Features
 14. Below are the screenshots of the output:
 
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output1.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output2.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output3.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/output4.png)
+![Assignment 1a](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/1a.png)
+![Assignment 1b](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/1b.png)
+![Assignment 1c](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/1c.png)
+
 
 ## Assignment 2 :Instrumentation via hypercall
 ### Collaborative efforts:
@@ -221,8 +221,17 @@ sudo apt-get install -y cpuid"
     cpuid -l 0x4ffffffd -s {exit_type}
     
  ```    
- The output screenshot is as below:
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/Screenshot%20from%202022-04-21%2023-34-42.png)
+ The output screenshots for assignment 2 are as below:
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/2a.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/2b.png)
+
+ The output screenshots for assignment 3 are as below:
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3a.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3b.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3c.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3d.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3e.png)
+![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3f.png)
  
  pushed the files into the repo
  
