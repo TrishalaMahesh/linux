@@ -309,8 +309,18 @@ Sample output screenshots
 
 ### Answers about Assignment 4:
 1. What did you learn from the count of exits? Was the count what you expected? If not, why not?
-- abc
-- abd
+- Exit count is more for shadow paging compared to nested paging since the VMM performs more work in case of shadow paging.
+- Few of the Exit types that occur around 6 times more than that of nested paging are as follows:
+    - Exit 0 : Exception or NMI
+    - Exit 1 : External interrupt
+    - Exit 7 : Interrupt window.
+    - Exit 12 : HLT
+    - Exit 28 : Control-register accesses.
+    - Exit 32 : WRMSR
+- Few type of exits that occured exclusively in shadow paging
+ - Exit 33 : VM-entry failure due to invalid guest state
+ - Exit 14 : INVLPG
+ 
 3. What changed between the two runs (ept vs no-ept)?
-- abc
-- abd
+- During Shadow paging i.e.ept=0 , VM performs more TLB flushes, page faults etc. and so their are more exits comapred to Nested paging ept=1.
+-  These exits include exits on %cr3 read and write, exits on page faults occuring in shadow page table and guest page table, exits on TLB flushes to remove stale entries when there is a free. This is the reason for increase in the number of exits.
