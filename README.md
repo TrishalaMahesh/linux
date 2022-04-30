@@ -329,7 +329,7 @@ Sample output screenshots
     - Exit 32 : WRMSR
       - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 32 is 311759```
       - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 32 is 429025```
-- Few type of exits that occured exclusively in shadow paging
+- Few type of exits that occurred exclusively in shadow paging
   - Exit 33 : VM-entry failure due to invalid guest state
       - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 33 is 0```
       - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 33 is 23010```
@@ -338,5 +338,5 @@ Sample output screenshots
       - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 14 is 237612```
  
 3. What changed between the two runs (ept vs no-ept)?
-- During Shadow paging i.e.ept=0 , VM performs more TLB flushes, page faults etc. and so their are more exits comapred to Nested paging ept=1.
-- These exits include exits on %cr3 read and write, exits on page faults occuring in shadow page table and guest page table, exits on TLB flushes to remove stale entries when there is a free. This is the reason for increase in the number of exits.
+- During Shadow paging i.e.ept=0 , VM performs more TLB flushes, page faults etc,hence there are more exits comapared to Nested paging i.e ept=1.
+- These exits include exits on %cr3 read and write, exits on page faults occurring in shadow page table and guest page table, exits on TLB flushes to remove stale entries when there is a free. This is the reason for increase in the number of exits.
