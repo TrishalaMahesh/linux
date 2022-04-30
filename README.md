@@ -164,21 +164,22 @@ lsmod | grep cmpe283
 ![Assignment 1c](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/1c.png)
 
 
-## Assignment 2 :Instrumentation via hypercall
+## Assignment 2 and 3:Instrumentation via hypercall
 ### Collaborative efforts:
 
 1. After making changes to the vmx.c and cpuid.c files, we followed the steps as mentioned below to compile and make the modules. 
 2. Built and loaded the kerenl again for outer VM.
-3. We created an Inner VM with Ubuntuu 20.04 image.
-4. We captured the output for the individual cpuid leaf nodes inside the inner VM.
-5. We created this Readme.MD file.
-  
-  
+3. Created an Inner VM with Ubuntuu 20.04 image using virt-manager.
+4. Captured the output for the individual cpuid leaf nodes inside the inner VM.
+
+
   ### Trishala Contributions:
   - Added feature to determine the total number of exits for CPUID - 0X4FFFFFFF
+  - Added feature to determine the number of exits for the exit number provided (on input) in %ecx for CPUID=0x4FFFFFFD
  
   ###  Suhas Contributions
   - Added feature to detect the time spent inside the VM for processing all exits for CPUID - 0X4FFFFFFE
+  - Added feature to detect the time spent processing the exit number provided (on input) in %ecx for CPUID - 0X4FFFFFFC
 
 ## Assignment 2 and 3 steps:
 
@@ -222,16 +223,16 @@ sudo apt-get install -y cpuid"
     
  ```    
  The output screenshots for assignment 2 are as below:
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/2a.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/2b.png)
+![Assignment 2](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/2a.png)
+![Assignment 2](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/2b.png)
 
  The output screenshots for assignment 3 are as below:
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3a.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3b.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3c.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3d.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3e.png)
-![alt text](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3f.png)
+![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3a.png)
+![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3b.png)
+![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3c.png)
+![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3d.png)
+![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3e.png)
+![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3f.png)
  
  pushed the files into the repo
  
