@@ -285,16 +285,32 @@ cpuid -l 0x4ffffffd -s{exit_type}
 8. Run ```dmesg``` on outer VM to read the counts and verify.
 
 Sample output screenshots
-- Without EPT
 
+- Without EPT
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/4a.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/4b.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/4c.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/4d.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/4e.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/4f.png)
+
+- With EPT
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e1.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e2.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e3.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e4.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e5.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e6.png)
+
+- Exclusive Exits only with EPT
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e11.png)
+![Assignment 4](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/e12.png)
 
 
 ### Answers about Assignment 4:
 1. What did you learn from the count of exits? Was the count what you expected? If not, why not?
-2. What changed between the two runs (ept vs no-ept)?
-
-
-
-    
-
-
+- abc
+- abd
+3. What changed between the two runs (ept vs no-ept)?
+- abc
+- abd
