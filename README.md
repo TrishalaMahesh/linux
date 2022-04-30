@@ -234,7 +234,6 @@ sudo apt-get install -y cpuid"
 ![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3e.png)
 ![Assignment 3](https://github.com/TrishalaMahesh/linux/blob/master/screenshots/3f.png)
  
- pushed the files into the repo
  
  Below are the list of the most frequent exits:
  1. Exit type 1 External Interruot
@@ -247,6 +246,55 @@ sudo apt-get install -y cpuid"
   2. Exit type 7-Interrupt window
   3. Exit type 28-Control-register access
   4. Exit type 49-EPT misconfiguration
+
+## Assignment 4: Nested Paging vs. Shadow Paging
+### Trishala Contributions:
+ - Ran  Assignment 3 code and booted a inner test VM using that code
+ - Recorded total exit count information for each type of exit handled by KVM
+ - Above step was completed sequence of queries of CPUID leaf function 0x4FFFFFFD
+### Suhas Contributions:
+ - Shutdown the inner test VM and removed kvm-intel module from running kernel
+ - Reloaded kvm-intel module from the latest kernel version's lib path with ept=0 flag on 
+ - Booted the same inner test vm and recorded total exit count information for each type of exit handled by KVM
+
+
+
+## Assignment 4 steps:
+1.Run Assignment 3 code and boot inner test vm.
+2.Once the inner VM boots,run the following command in inner vm terminal to get the total count for each type of exit handled by KVM) 
+using a series of queries of CPUID leaf function 0x4FFFFFFD.
+```
+cpuid -l 0x4ffffffd -s{exit_type}
+```
+3. Run ```dmesg``` on outer VM to read the counts and verify.
+4. Turn off inner VM
+5. Run below command to remove  ‘kvm-intel’ module from your running kernel
+```
+sudo rmmod kvm-intel
+```
+
+6.Relaod the kvm_intel module from the lib path of your current kernel version 
+```
+nsmod  /lib/modules/5.18.0-rc3+/kernel/arch/x86/kvm/kvm-intel.ko ept=0
+```
+7.Boot the same inner test vm again, and record the total exit count information (total count for each type of exit handled by KVM)
+using a series of queries of CPUID leaf function 0x4FFFFFFD.
+```
+cpuid -l 0x4ffffffd -s{exit_type}
+```
+8. Run ```dmesg``` on outer VM to read the counts and verify.
+
+Sample output screenshots
+- Without EPT
+
+
+
+### Answers about Assignment 4:
+1. What did you learn from the count of exits? Was the count what you expected? If not, why not?
+2. What changed between the two runs (ept vs no-ept)?
+
+
+
     
 
 
