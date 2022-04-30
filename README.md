@@ -312,14 +312,30 @@ Sample output screenshots
 - Exit count is more for shadow paging compared to nested paging since the VMM performs more work in case of shadow paging.
 - Few of the Exit types that occur around 6 times more than that of nested paging are as follows:
     - Exit 0 : Exception or NMI
-    - Exit 1 : External interrupt
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 0 is 8767```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 0 is 1964285```
+    - Exit 1 : External interrupt      
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 1 is 66658```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 1 is 389051```
     - Exit 7 : Interrupt window.
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 7 is 12942```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 7 is 46345```
     - Exit 12 : HLT
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 12 is 113392```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 12 is 155798```
     - Exit 28 : Control-register accesses.
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 28 is 19469```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 28 is 123916```
     - Exit 32 : WRMSR
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 32 is 311759```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 32 is 429025```
 - Few type of exits that occured exclusively in shadow paging
- - Exit 33 : VM-entry failure due to invalid guest state
- - Exit 14 : INVLPG
+  - Exit 33 : VM-entry failure due to invalid guest state
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 33 is 0```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 33 is 23010```
+  - Exit 14 : INVLPG
+      - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 14 is 0```
+      - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 14 is 237612```
  
 3. What changed between the two runs (ept vs no-ept)?
 - During Shadow paging i.e.ept=0 , VM performs more TLB flushes, page faults etc. and so their are more exits comapred to Nested paging ept=1.
