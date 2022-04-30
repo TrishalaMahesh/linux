@@ -275,7 +275,7 @@ sudo rmmod kvm-intel
 
 6.Relaod the kvm_intel module from the lib path of your current kernel version 
 ```
-nsmod  /lib/modules/5.18.0-rc3+/kernel/arch/x86/kvm/kvm-intel.ko ept=0
+insmod  /lib/modules/5.18.0-rc3+/kernel/arch/x86/kvm/kvm-intel.ko ept=0
 ```
 7.Boot the same inner test vm again, and record the total exit count information (total count for each type of exit handled by KVM)
 using a series of queries of CPUID leaf function 0x4FFFFFFD.
