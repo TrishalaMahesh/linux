@@ -310,7 +310,7 @@ Sample output screenshots
 ### Answers about Assignment 4:
 1. What did you learn from the count of exits? Was the count what you expected? If not, why not?
 - Exit count is more for shadow paging compared to nested paging since the VMM performs more work in case of shadow paging.
-- Few of the Exit types that occur around 6 times more than that of nested paging are as follows:
+- Few of the Exit types that occur around few thousand more to upto 6 times more than that of nested paging are as follows:
     - Exit 0 : Exception or NMI
       - without EPT: ```CPUID 0x4ffffffd exit count for exit_type 0 is 8767```
       - with EPT :  ``` CPUID 0x4ffffffd exit count for exit_type 0 is 1964285```
@@ -339,4 +339,4 @@ Sample output screenshots
  
 3. What changed between the two runs (ept vs no-ept)?
 - During Shadow paging i.e.ept=0 , VM performs more TLB flushes, page faults etc. and so their are more exits comapred to Nested paging ept=1.
--  These exits include exits on %cr3 read and write, exits on page faults occuring in shadow page table and guest page table, exits on TLB flushes to remove stale entries when there is a free. This is the reason for increase in the number of exits.
+- These exits include exits on %cr3 read and write, exits on page faults occuring in shadow page table and guest page table, exits on TLB flushes to remove stale entries when there is a free. This is the reason for increase in the number of exits.
